@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RuShop | Boutique Bags</title>
+    <meta
+      name="description"
+      content="RuShop is a boutique bag shop with refined handbags, totes, crossbody bags, and evening clutches."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23171412'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-family='Arial' font-size='28' font-weight='800' fill='white'%3ER%3C/text%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#products">Skip to products</a>
+
+    <header class="site-header">
+      <nav class="nav" aria-label="Main navigation">
+        <a class="brand" href="#" aria-label="RuShop home">
+          <span class="brand-mark" aria-hidden="true">R</span>
+          <span>RuShop</span>
+        </a>
+        <div class="nav-links">
+          <a href="#products">Shop</a>
+          <a href="#craft">Craft</a>
+          <a href="#journal">Journal</a>
+        </div>
+        <button class="cart-button" id="openCart" type="button">
+          <span>Cart</span>
+          <strong id="cartCount">0</strong>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="heroTitle">
+        <div class="hero-art" aria-hidden="true">
+          <div class="hero-bag hero-bag-large"></div>
+          <div class="hero-bag hero-bag-small"></div>
+          <div class="hero-tag">New atelier drop</div>
+        </div>
+        <div class="hero-copy">
+          <p class="eyebrow">Boutique Bag Company</p>
+          <h1 id="heroTitle">RuShop</h1>
+          <p>
+            Polished carry pieces made for sharp workdays, weekend galleries,
+            and late reservations.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-link" href="#products">Shop 30 styles</a>
+            <a class="secondary-link" href="#craft">See materials</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="store-tools" aria-label="Shopping tools">
+        <label class="search-field" for="searchInput">
+          <span>Search</span>
+          <input id="searchInput" type="search" placeholder="Search by product, color, or material" />
+        </label>
+        <label class="select-field" for="sortSelect">
+          <span>Sort</span>
+          <select id="sortSelect">
+            <option value="featured">Featured</option>
+            <option value="price-low">Price: low to high</option>
+            <option value="price-high">Price: high to low</option>
+            <option value="name">Name</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="category-strip" aria-label="Product categories">
+        <button class="category-button active" type="button" data-category="All">All</button>
+        <button class="category-button" type="button" data-category="Totes">Totes</button>
+        <button class="category-button" type="button" data-category="Shoulder Bags">Shoulder Bags</button>
+        <button class="category-button" type="button" data-category="Crossbody">Crossbody</button>
+        <button class="category-button" type="button" data-category="Clutches">Clutches</button>
+        <button class="category-button" type="button" data-category="Backpacks">Backpacks</button>
+      </section>
+
+      <section class="products-section" id="products" aria-labelledby="productsTitle">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Shop the collection</p>
+            <h2 id="productsTitle">Thirty distinct RuShop silhouettes</h2>
+          </div>
+          <p id="resultCount">30 products</p>
+        </div>
+        <div class="product-grid" id="productGrid"></div>
+        <p class="empty-state" id="emptyState" hidden>No matching bags. Try another search or category.</p>
+      </section>
+
+      <section class="feature-band" id="craft" aria-labelledby="craftTitle">
+        <div>
+          <p class="eyebrow">Craft notes</p>
+          <h2 id="craftTitle">Clean hardware, structured linings, considered scale.</h2>
+        </div>
+        <div class="feature-list">
+          <div>
+            <strong>Materials</strong>
+            <span>Italian leather, coated canvas, suede, and satin finishes.</span>
+          </div>
+          <div>
+            <strong>Carry logic</strong>
+            <span>Every style lists laptop fit, strap type, and occasion.</span>
+          </div>
+          <div>
+            <strong>Shopify feel</strong>
+            <span>Fast filtering, quick view, cart drawer, and clear checkout states.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="journal" id="journal" aria-labelledby="journalTitle">
+        <p class="eyebrow">Journal</p>
+        <h2 id="journalTitle">Three ways to style the same bag.</h2>
+        <div class="journal-grid">
+          <article>
+            <span>01</span>
+            <h3>Office polish</h3>
+            <p>Pair compact structure with matte metal hardware and tonal shoes.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Weekend texture</h3>
+            <p>Use woven leather, contrast stitching, or soft suede to break up tailoring.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Evening focus</h3>
+            <p>Choose a defined mini shape so the bag reads cleanly under low light.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <aside class="cart-drawer" id="cartDrawer" aria-hidden="true" aria-labelledby="cartTitle">
+      <div class="drawer-panel" role="dialog" aria-modal="true">
+        <div class="drawer-header">
+          <h2 id="cartTitle">Shopping cart</h2>
+          <button class="icon-button" id="closeCart" type="button" aria-label="Close cart">×</button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer">
+          <div class="cart-total">
+            <span>Total</span>
+            <strong id="cartTotal">$0</strong>
+          </div>
+          <button class="checkout-button" type="button" id="checkoutButton">Checkout securely</button>
+          <p>Local preview only. No payment is processed.</p>
+        </div>
+      </div>
+    </aside>
+
+    <dialog class="quick-view" id="quickView">
+      <div class="quick-view-body">
+        <button class="icon-button quick-close" id="closeQuickView" type="button" aria-label="Close quick view">×</button>
+        <div id="quickArt" class="quick-art"></div>
+        <div class="quick-copy">
+          <p class="eyebrow" id="quickCategory"></p>
+          <h2 id="quickName"></h2>
+          <p id="quickDescription"></p>
+          <dl>
+            <div>
+              <dt>Material</dt>
+              <dd id="quickMaterial"></dd>
+            </div>
+            <div>
+              <dt>Color</dt>
+              <dd id="quickColor"></dd>
+            </div>
+            <div>
+              <dt>Capacity</dt>
+              <dd id="quickCapacity"></dd>
+            </div>
+          </dl>
+          <div class="quick-actions">
+            <strong id="quickPrice"></strong>
+            <button class="primary-button" id="quickAdd" type="button">Add to cart</button>
+          </div>
+        </div>
+      </div>
+    </dialog>
+
+    <template id="productTemplate">
+      <article class="product-card">
+        <button class="image-button" type="button">
+          <span class="product-art"></span>
+        </button>
+        <div class="product-info">
+          <div>
+            <p class="product-category"></p>
+            <h3></h3>
+            <p class="product-meta"></p>
+          </div>
+          <div class="product-bottom">
+            <strong class="product-price"></strong>
+            <button class="add-button" type="button">Add</button>
+          </div>
+        </div>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
